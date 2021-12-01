@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    </head>
+    <body>
+        <main class="container">
+            <h1>Contacts</h1>
+            <form action="/saveEdition" method="post">
+                <input type="hidden" th:value="${Contact.id}" name="id"/>
+                <label for="name">Name</label>
+                <input type="text"  th:value="${Contact.name}" id="name" name="name"/><br/><br/>
+
+                <label for="number">Number</label>
+                <input type="text"  th:value="${Contact.number}" id="number" name="number"/><br/><br/>
+
+                <label for="email">Email</label>
+                <input type="text" th:value="${Contact.email}" id="email" name="email"/><br/><br/>
+
+                <label for="address">Address</label>
+                <input type="text" th:value="${Contact.address}" id="address" name="address" /><br/><br/>
+
+                <input type="submit" class="button" value="Save"/>
+                <a class="cancelButton" href="/contactList">Cancel </a>
+
+            </form>
+        </main> 
+    </body>
+</html>

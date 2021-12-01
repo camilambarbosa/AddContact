@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    </head>
+    <body>
+        <main class= "container">
+            <h1>Contacts</h1>
+            <ul>
+                
+                <li class="contact_Item" th:each="contact: ${contactList}">
+                    <span th:text="${contact.name}"/>
+                    <div>
+                        <a th:href="@{/editContact/(id=${contact.id})}"><img src="assets/edit.jpeg"/></a>
+                        <a th:href="@{/deleteContact/(id=${contact.id})}"><img src="assets/delete.jpeg"/></a>
+                    </div>
+                </li> 
+
+
+            </ul>
+            <a class="cancelButton" href="/addContact">Add </a>
+        </main>
+
+
+    </body>
+</html>
